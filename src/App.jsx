@@ -4,9 +4,9 @@ import TaskList from './components/TaskList';
 
 function App() {
     const [tasks, setTasks] = useState([
-        { name: 'Task 1', completed: false },
-        { name: 'Task 2', completed: true },
-        { name: 'Task 3', completed: false },
+        { name: 'Do the dishes', completed: false },
+        { name: 'Walk the dog', completed: true },
+        { name: 'Study for homework', completed: false },
     ]);
 
     const addTask = (taskName) => {

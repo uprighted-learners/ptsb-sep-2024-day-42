@@ -1,20 +1,16 @@
-import React from 'react'
+import React from 'react';
 
-export default function TaskList({ tasks, removeTask }) {
+function TaskList({ tasks, toggleTaskCompletion, removeTask }) {
     return (
-        <div>
-            <ul>
-                {tasks.map((task, index) =>
-                    <li key={index}>
-                        <p>{task}</p>
-                        <button
-                            onClick={() => removeTask(index)}
-                        >
-                            REMOVE
-                        </button>
-                    </li>
-                )}
-            </ul>
-        </div>
-    )
+        <ul>
+            {tasks.map((task, index) => (
+                <li key={index} style={{ textDecoration: task.completed ? 'line-through' : 'none' }}>
+                    <span onClick={() => toggleTaskCompletion(index)}>{task.name}</span>
+                    <button onClick={() => removeTask(index)}>Remove</button>
+                </li>
+            ))}
+        </ul>
+    );
 }
+
+export default TaskList;
